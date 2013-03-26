@@ -32,7 +32,7 @@ create_table :categories do |t|
 end
 ```
 
-```
+```ruby
 class Category < ActiveRecord::Base
   attr_accessible :name
   acts_as_category
@@ -47,7 +47,7 @@ class Topic < ActiveRecord::Base
 end
 ```
 
-```
+```ruby
 Category.used_for
 Category.used_for('category')
 Category.used_for(Topic)
