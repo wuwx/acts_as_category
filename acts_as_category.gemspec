@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["wuweixin@gmail.com"]
   spec.description   = "acts_as_category"
   spec.summary       = "acts_as_category"
-  spec.homepage      = ""
+  spec.homepage      = "http://github.com/wuwx/acts_as_category"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    acts_as_category
+    Category.used_by(Topic)
+    Category.used_by(@forum)
+    @category.used_by?(Topic)
+    @category.used_by?(@topic)
 
 ## Contributing
 
