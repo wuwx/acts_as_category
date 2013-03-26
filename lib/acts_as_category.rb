@@ -12,17 +12,19 @@ module ActsAsCategory
       
         belongs_to :resource, :polymorphic => true
         
-        def self.used_by(*resources)
-          context = resource_id = resource_type = nil
+        def self.used_for(*resources)
+          model = context = resource_id = resource_type = nil
           resources.each do |resource|
             if resource.kind_of?(ActiveRecord::Base)
               resource_id   ||= resource.id
               resource_type ||= resource.class
+            elsif resource.is_a?(Class)
+              model ||= resource.to_s
             else
               context ||= resource
             end
           end
-          where(:context => context, :resource_id => resource_id, :resource_type => resource_type)
+          where(:model => model, :context => context, :resource_id => resource_id, :resource_type => resource_type)
         end
         
         include InstanceMethods
@@ -32,20 +34,7 @@ module ActsAsCategory
   end
 
   module InstanceMethods
-    
-    def used_by?(*resources)
-      context = resource_id = resource_type = nil
-      resources.each do |resource|
-        if resource.kind_of?(ActiveRecord::Base)
-          resource_id   ||= resource.id
-          resource_type ||= resource.class
-        else
-          context ||= resource
-        end
-      end
-      self.class.where(:context => context, :resource_id => resource_id, :resource_type => resource_type).size > 0
-    end
-    
+        
   end
 
 end
