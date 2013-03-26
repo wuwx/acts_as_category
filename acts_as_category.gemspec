@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ActsAsCategory::VERSION
   spec.authors       = ["wuwx"]
   spec.email         = ["wuweixin@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = "acts_as_category"
+  spec.summary       = "acts_as_category"
   spec.homepage      = ""
   spec.license       = "MIT"
 
